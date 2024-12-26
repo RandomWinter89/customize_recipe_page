@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16px;
+    --font-xxs: .25rem;
+    --font-xs: .5rem;
+    --font-s: .75rem;
+    --font-m: 1rem;
+    --font-l: 1.25rem;
+    --font-xl: 1.75rem;
+    --font-xxl: 2.5rem;
+}
+
+/* primary-button */
+/* warning-button */
+/* accordation */
+/* style list */
+/* underline table */
