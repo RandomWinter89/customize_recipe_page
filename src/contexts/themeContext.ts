@@ -1,25 +1,22 @@
-// import React, { createContext, useState } from 'react';
+import { Dispatch, SetStateAction, createContext, useContext } from "react"; 
 
-// type ThemeContextType = {
-//     theme: string;
-//     setTheme: React.Dispatch<React.SetStateAction<string>>;
-// };
+//Setup simple context
+export type ThemeContextType = {
+    theme: string;
+    setTheme: Dispatch<SetStateAction<string>>;
+};
+export const ThemeContext = createContext<ThemeContextType>({
+    theme: "light",
+    setTheme: () => {},
+});
 
-// export const ThemeContext = createContext<ThemeContextType>(
-//     null as unknown as ThemeContextType,
-// );
+//Error to access
+export const useThemeContext = () => {
+    const currentContext = useContext(ThemeContext);
 
-// //==========PROVIDER==========
+    if (!currentContext) {
+        throw new Error( "To access useThemeContext, it must wrapped within <ThemeContext.Provider>");
+    }
 
-// type ThemeProviderProps = {
-//     children: React.ReactNode,
-// };
-
-// export const ThemeProvider = ({children}: ThemeProviderProps) => {
-//     const [theme, setTheme] = useState<string>("light");
-//     const value = { theme, setTheme, };
-
-//     return (
-//         <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
-//     );
-// };
+    return currentContext;
+};
