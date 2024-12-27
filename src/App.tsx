@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { ThemeContext, ThemeContextType } from './contexts/themeContext';
 
 import './App.css'
 
 function App() {
-  const [theme, setTheme] = useState<ThemeContextType>("light");
+  
   return (
+    
     // <ThemeContext.Provider value={theme}>
       
     // </ThemeContext.Provider>
