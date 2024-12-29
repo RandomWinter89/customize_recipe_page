@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import { ThemeContext } from './contexts/themeContext';
 
-import './App.css'
+import Homepage from './pages/home';
+
+import './main.css'
 
 const App = () => {
   const [theme, setTheme] = useState<string>("light");
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      
+      <Homepage/>
     </ThemeContext.Provider>
 
       // {/* <div>

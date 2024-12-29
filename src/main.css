@@ -7,7 +7,10 @@
 }
 
 :root {
-    font-size: 16px;
+    /* 16 1rem
+    24 1.5rem
+    32 2rem */
+
     --font-xxs: .25rem;
     --font-xs: .5rem;
     --font-s: .75rem;
@@ -22,3 +25,32 @@
 /* accordation */
 /* style list */
 /* underline table */
+
+div.Grid-Wrapper {
+    padding: var(--font-s);
+
+    background-color: rgb(199, 199, 199);
+    color:black;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+div.Grid-Wrapper > .Card {
+    border: 2px solid red;
+    padding: 12px;
+    height: 320px;
+    width: 180px;
+}
+
+.Card .Sub-Header {
+    font-size: var(--font-m);
+    line-height: 2em;
+    font-weight: bold;
+}
+
+.Card .Sub-Description {
+    font-size: var(--font-s);
+}
