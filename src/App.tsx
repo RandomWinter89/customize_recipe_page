@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ThemeContext } from './contexts/themeContext';
 
 import Homepage from './pages/home';
+import AddRecipe from './pages/addPage';
 
 import './main.css'
 
@@ -10,7 +11,7 @@ const App = () => {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <Homepage/>
+      <AddRecipe/>
     </ThemeContext.Provider>
 
       // {/* <div>
