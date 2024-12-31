@@ -20,6 +20,14 @@
     --font-xxl: 2.5rem;
 }
 
+body {
+    min-height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* primary-button */
 /* warning-button */
 /* accordation */
@@ -53,4 +61,55 @@ div.Grid-Wrapper > .Card {
 
 .Card .Sub-Description {
     font-size: var(--font-s);
+}
+
+.Modal__Open, .Modal__Open form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Modal__Open {
+    border: 1px solid red;
+    padding: 1rem;
+    min-width: 60%;
+}
+
+form .Modal__Thumbnail{
+    border-radius: 12px;
+    object-fit: cover;
+    height: 12rem;
+    width: 34rem;
+}
+
+.Modal__Open .Modal__Header {
+    font-size: var(--font-xl);
+    margin-bottom: 0.75rem;
+}
+
+.Modal__Open label {
+    margin-top: .5rem;
+    margin-bottom: .25rem;
+    font-size: var(--font-m);
+}
+
+.Modal__Open input {
+    border-radius: 8px;
+    border: .01rem solid;
+    
+    height: 2rem;
+}
+
+.Modal__Open input[type="text"], 
+.Modal__Open textarea{
+    padding: 1rem;
+}
+
+.Modal__Open textarea {
+    resize: vertical;
+    min-height: auto;
+}
+
+.Modal__Open input[type="submit"] {
+    margin-top: 0.75rem;
 }

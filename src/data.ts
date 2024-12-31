@@ -1,5 +1,6 @@
 
 export type RecipeForm = {
+    id: number,
     thumbnail?: string,
     gallery?: string[],
     recipeName: string,
@@ -13,6 +14,7 @@ export type RecipeForm = {
 
 export const recipe01: RecipeForm[] = [
     {
+        id: 1,
         thumbnail: 'https://joyfoodsunshine.com/wp-content/uploads/2022/07/best-omelette-recipe-1.jpg',
         recipeName: 'Simple Omelette Recipe',
         description: 'An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats',
@@ -33,6 +35,7 @@ export const recipe01: RecipeForm[] = [
             22
         ]
     },{
+        id: 2,
         thumbnail: 'https://norecipes.com/wp-content/uploads/2015/02/recipejapanese-curry-scratch.1024x1024-500x500.jpg',
         recipeName: 'Classic Chicken Curry',
         description: 'A warm and comforting curry dish featuring tender chicken cooked in a rich, flavorful sauce of aromatic spices and creamy coconut milk.',
@@ -63,6 +66,7 @@ export const recipe01: RecipeForm[] = [
         ]
     },
     {
+        id: 3,
         recipeName: 'Beef Udon Soup',
         description: 'A hearty and flavorful Japanese dish featuring thick udon noodles, tender beef slices, and a savory broth.',
         prepTime: 10,
@@ -91,6 +95,7 @@ export const recipe01: RecipeForm[] = [
         ]
     },
     {
+        id: 4,
         recipeName: 'Crispy Fried Chicken',
         description: 'A classic comfort food featuring juicy chicken coated in a seasoned, crispy crust, perfect for any occasion.',
         prepTime: 15,
@@ -120,6 +125,7 @@ export const recipe01: RecipeForm[] = [
         ]
     },
     {
+        id: 5,
         recipeName: 'French Toast',
         description: 'A sweet breakfast treat made with bread soaked in a custard mixture, cooked to golden perfection, and topped with syrup or fresh fruit.',
         prepTime: 5,
