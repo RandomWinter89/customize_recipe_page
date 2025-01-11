@@ -1,15 +1,20 @@
+export type Nutrition = {
+    Calories: number,
+    Carb: number,
+    Protein: number,
+    Fat: number
+}
 
 export type RecipeForm = {
     id: number,
     thumbnail?: string,
-    gallery?: string[],
     recipeName: string,
     description: string,
     prepTime: number,
     cookTime: number,
     ingredients: string[],
     instructions: string[],
-    nutrition: number[],
+    nutrition: Nutrition;
 }
 
 export const recipe01: RecipeForm[] = [
@@ -28,12 +33,12 @@ export const recipe01: RecipeForm[] = [
             'Beat the eggs: In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.',
             'Heat the pan: Place a non-stick frying pan over medium heat and add butter or oil',
         ],
-        nutrition: [
-            277,
-            0,
-            20,
-            22
-        ]
+        nutrition: {
+            Calories: 277,
+            Carb: 0,
+            Protein: 20,
+            Fat: 22
+        }
     },{
         id: 2,
         thumbnail: 'https://norecipes.com/wp-content/uploads/2015/02/recipejapanese-curry-scratch.1024x1024-500x500.jpg',
@@ -58,12 +63,12 @@ export const recipe01: RecipeForm[] = [
             'Add spices and liquid: Stir in curry powder, coconut milk, and chicken broth. Simmer for 15-20 minutes until the chicken is cooked through and the sauce has thickened.',
             'Season to taste: Add salt to taste and serve with steamed rice or naan.',
         ],
-        nutrition: [
-            345,
-            5,
-            28,
-            24
-        ]
+        nutrition: {
+            Calories: 345,
+            Carb: 5,
+            Protein: 28,
+            Fat: 24
+        }
     },
     {
         id: 3,
@@ -87,12 +92,12 @@ export const recipe01: RecipeForm[] = [
             'Combine and heat noodles: Add udon noodles to the simmering broth and cook for a few minutes until tender.',
             'Assemble and garnish: Transfer noodles and broth to a bowl, top with cooked beef slices and chopped green onions.',
         ],
-        nutrition: [
-            430,
-            45,
-            22,
-            16
-        ]
+        nutrition: {
+            Calories: 430,
+            Carb: 45,
+            Protein: 22,
+            Fat: 16
+        }
     },
     {
         id: 4,
@@ -117,12 +122,12 @@ export const recipe01: RecipeForm[] = [
             'Coat the chicken: Remove chicken from buttermilk and coat evenly in the flour mixture.',
             'Fry until golden: Heat oil in a deep pan or fryer to 350°F (175°C). Fry chicken until golden brown and cooked through, about 15-20 minutes.',
         ],
-        nutrition: [
-            440,
-            15,
-            30,
-            25
-        ]
+        nutrition: {
+            Calories: 440,
+            Carb: 15,
+            Protein: 30,
+            Fat: 25
+        }
     },
     {
         id: 5,
@@ -145,11 +150,11 @@ export const recipe01: RecipeForm[] = [
             'Cook until golden: Heat butter in a pan over medium heat. Cook bread slices for 2-3 minutes per side until golden brown.',
             'Serve warm: Plate the French toast and drizzle with maple syrup or top with fresh fruit.',
         ],
-        nutrition: [
-            310,
-            35,
-            10,
-            12
-        ]
+        nutrition: {
+            Calories: 310,
+            Carb: 35,
+            Protein: 10,
+            Fat: 12
+        }
     }
 ]

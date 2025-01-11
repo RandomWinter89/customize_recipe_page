@@ -17,15 +17,17 @@ const recipeSlice = createSlice({
                 instructions: action.payload.instructions,
                 nutrition: action.payload.nutrition,
             };
+
             state.push(newRecipe);
         },
         updateRecipe: (state, action) => {
-            const index = state.findIndex((recipePost) => recipePost);
+            const index = state.findIndex((recipePost) => recipePost.id === action.payload.id);
+
             if (index != null)
                 state[index] = action.payload;
         },
         removeRecipe: (state, action) => {
-            return state.filter((recipePost) => recipePost.id !== action.payload.id);
+            return state.filter((recipePost) => recipePost.id !== action.payload);
         }
     },
 });

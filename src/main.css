@@ -7,79 +7,362 @@
 }
 
 :root {
-    /* 16 1rem
-    24 1.5rem
-    32 2rem */
+    /* Font Size */
+    --font-xxs: 0.25rem;
+    --font-xs:  0.50rem;
+    --font-s:   0.75rem;
+    --font-r:   1.00rem;
+    --font-m:   1.25rem;
+    --font-l:   1.50rem;
+    --font-xl:  1.75rem;
+    --font-xxl: 2.00rem;
 
-    --font-xxs: .25rem;
-    --font-xs: .5rem;
-    --font-s: .75rem;
-    --font-m: 1rem;
-    --font-l: 1.25rem;
-    --font-xl: 1.75rem;
-    --font-xxl: 2.5rem;
+    /* Font Weight */
+    --fw-regular: 400;
+    --fw-medium: 600;
+    --fw-bold: 700;
+
+    /* Font Family */
+    --ff-primary: "Young Serif", serif;
+    --ff-secondary: "Outfit", serif;
+
+    /* Font Type */
+    --ff-heading: var(--ff-primary);
+    --ff-body: var(--ff-secondary);
+
+    /* ============================================== */
+    --clr-white: hsl(0, 0%, 100%);
+
+    --clr-stone-100: hsl(30, 54%, 90%);
+    --clr-stone-150: hsl(30, 18%, 87%);
+    --clr-stone-600: hsl(30, 10%, 34%);
+    --clr-stone-900: hsl(24, 05%, 18%);
+
+    --clr-brown-800: hsl(14, 45%, 36%);
+    --clr-rose-800: hsl(332, 51%, 32%);
+    --clr-rose-50: hsl(330, 100%, 98%);
+
+    /* Background Color */
+    --clr-primary-bg:   var(--clr-stone-100);
+    --clr-container-bg: var(--clr-white);
+    --clr-quote-bg:     var(--clr-rose-50);
+
+    /* Font Color */
+    --clr-pr-heading:   var(--clr-stone-900);
+    --clr-sb-heading:   var(--clr-brown-800);
+    --clr-paragraph:    var(--clr-stone-600);
+
+    --clr-q-heading: var(--clr-rose-800);
+    --clr-line: var(--clr-stone-150);
+    /* ============================================== */
 }
+
+/* ===============Main=============== */
 
 body {
-    min-height: 100vh;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 100svh;
 }
 
-/* primary-button */
-/* warning-button */
-/* accordation */
-/* style list */
-/* underline table */
+#root{
+    min-height: 100svh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    background-color: var(--clr-primary-bg);
+}
+
+/* ===============Frontend Mentor=============== */
+
+div.--page{
+    background-color: var(--clr-container-bg);
+    border: 2px solid var(--clr-pr-heading);
+    border-radius: 1em;
+
+    max-width: 45rem;
+    margin: 4rem auto;
+    padding: 2em;
+
+    font-family: var(--ff-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--ff-heading);
+}
+
+h1 {
+    color: var(--clr-pr-heading);
+    font-size: var(--font-xxl);
+
+    margin: 0.75em 0em;
+}
+
+h2 {
+    color: var(--clr-sb-heading);
+    margin: 0.75em 0em;
+}
+
+/* Listing and Paragraph */
+
+ul, ol {
+    list-style-position: outside;
+    margin-left: 1.5em;
+}
+
+li, p{
+    color: var(--clr-paragraph);
+    font-size: var(--font-r);
+}
+
+p {
+    margin-bottom: 2.0em;
+    font-weight: var(--fw-regular);
+}
+
+li {
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+li::marker {
+    color: var(--clr-sb-heading);
+}
+
+li p, 
+li strong {
+    display: inline-block;
+    margin-bottom: 0em;
+}
+
+ol li::marker {
+    font-weight: var(--fw-bold);
+}
+
+/* Images */
+
+img {
+    border-radius: 1em;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Container Setup */
+
+div.--page > .--bg-duration {
+    background-color: var(--clr-quote-bg);
+    border-radius: 1em;
+    padding: 2.0em;
+
+    margin-bottom: 1.5em;
+}
+
+.--bg-duration > h4 {
+    color: var(--clr-q-heading);
+    font-family: var(--ff-body);
+    font-size: var(--font-m);
+
+    margin-bottom: 0.5em;
+}
+
+.--bg-duration > ul li::marker {
+    color: var(--clr-q-heading);
+}
+
+hr {
+    width: 100%;
+    margin: 2em auto;
+    color: var(--clr-line);
+}
+
+/* Nutrition Form */
+
+div.--nutrition-form {
+    margin-bottom: 1em;
+}
+
+div.--nutrition-form > p {
+    margin-bottom: 1.0em;
+}
+
+div.--nutrition-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    border-bottom: 0.1rem solid var(--clr-stone-900);
+    margin-bottom: 0.10rem;
+}
+
+div.--nutrition-list > * {
+    padding-left: 2em;
+    margin: 1rem 0;
+}
+
+div.--nutrition-list > strong {
+    color: var(--clr-sb-heading);
+}
+
+div.--nutrition-list:last-child {
+    border-style: none;
+}
+
+/* ===============Sidebar=============== */
+
+nav.Sidebar{
+    background-color: var(--clr-container-bg);
+    min-height: 100svh;
+    width: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: self-start;
+
+    border-right: 2px solid var(--clr-pr-heading);
+
+    position: sticky;
+    left: 0;
+    top: 0;
+}
+
+nav.Sidebar > .Sidebar-Section {
+    padding: 0.5em;
+    display: grid;
+    gap: 1em;
+}
+
+.Sidebar-Icon {
+    background-color: white;
+    height: 3rem;
+    width: 3rem;
+
+    border: 2px solid black;
+    border-radius: 50%;
+
+    padding: 0.25em;
+}
+
+.Sidebar-Icon:hover{
+    background-color: #fa772a;
+}
+
+/* ===============Grid=============== */
+
+div.--public-page {
+    width: 100%;
+    padding: 2em 4em;
+}
+
+div.--public-page > h1 {
+    text-align: center;
+}
 
 div.Grid-Wrapper {
-    padding: var(--font-s);
-
-    background-color: rgb(199, 199, 199);
-    color:black;
+    margin: 0.5em auto;
+    margin-inline: auto;
+    padding: 2em 0em;
 
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 2rem;
 }
 
-div.Grid-Wrapper > .Card {
-    border: 2px solid red;
-    padding: 12px;
-    height: 320px;
-    width: 180px;
+.Card {
+    background-color: var(--clr-container-bg);
+    margin-bottom: 1rem;
+    padding: 1.25em;
+
+    border: 2px solid var(--clr-pr-heading);
+    border-radius: 16px;
+
+    position: relative;
+}
+
+.Card * {
+    margin-bottom: 0.25em;
+}
+
+.Card .Item-Removal {
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+    
+    aspect-ratio: 1/1;
+
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.Card .Block {
+    background-color: grey;
+    border-radius: 1em;
+    aspect-ratio: 16/9;
+    width: 100%;
+}
+
+.Card .Block span {
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .Card .Sub-Header {
     font-size: var(--font-m);
+    font-weight: var(--fw-bold);
     line-height: 2em;
-    font-weight: bold;
 }
 
 .Card .Sub-Description {
-    font-size: var(--font-s);
+    font-size: var(--font-r);
+    line-height: 1.5em;
 }
 
+.Card .Sub-Description > strong {
+    font-weight: var(--fw-medium);
+}
+
+/* ===============Form=============== */
+
 .Modal__Open, .Modal__Open form {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .Modal__Open {
-    border: 1px solid red;
-    padding: 1rem;
-    min-width: 60%;
+    background-color: var(--clr-container-bg);
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    color: black;
+
+    max-width: 45rem;
+    padding: 2em;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-inline: auto;
+}
+
+form hr{
+    margin: 0.75em auto;
 }
 
 form .Modal__Thumbnail{
     border-radius: 12px;
+    aspect-ratio: 3/1;
     object-fit: cover;
-    height: 12rem;
-    width: 34rem;
+
+    border: 2px solid black;
+    text-align: center;
+    
+    width: 100%;
+    margin-bottom: 0.5em;
 }
 
 .Modal__Open .Modal__Header {
@@ -88,28 +371,247 @@ form .Modal__Thumbnail{
 }
 
 .Modal__Open label {
-    margin-top: .5rem;
-    margin-bottom: .25rem;
     font-size: var(--font-m);
+    line-height: 2em;
 }
 
-.Modal__Open input {
+.Modal__Open input,
+div.Ingredient__Add button, 
+div.Instruction__Add button {
     border-radius: 8px;
-    border: .01rem solid;
-    
     height: 2rem;
+
+    padding: 0.5em;;
 }
 
-.Modal__Open input[type="text"], 
+.Modal__Open input, 
 .Modal__Open textarea{
-    padding: 1rem;
+    border-radius: 8px;
+
+    margin-bottom: 0.5rem;
+    padding: 1em;
+}
+
+label {
+    margin-top: .5em;
+}
+
+div.Ingredient__Add, 
+div.Instruction__Add {
+    display: flex;
+    align-items: center;
+}
+
+div.Ingredient__Add input,
+div.Instruction__Add input {
+    flex: 3;
+    margin-right: 2em;
+    margin-bottom: 0;
+}
+
+div.Ingredient__Add button, 
+div.Instruction__Add button {
+    flex: 1;
+    font-size: var(--font-s);
 }
 
 .Modal__Open textarea {
     resize: vertical;
-    min-height: auto;
+    min-height: 4em;
 }
 
-.Modal__Open input[type="submit"] {
-    margin-top: 0.75rem;
+/* List */
+div.Sub__Wrapper {
+    background-color: var(--clr-stone-150);
+    border: 2px solid black;
+    border-radius: 1em;
+    
+    margin: 1em 0;
+    padding: 1em;
 }
+
+div.Ingredient__List,
+div.Instruction__List {
+    display: flex;
+    align-items: center;
+
+    border-bottom: 2px solid black;
+
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+p.Instruction__List-Item,
+p.Ingredient__List-Item,
+button.Button__Removal {
+    height: auto;
+    padding: auto;
+    margin: 0;
+}
+
+button.Button__Removal:hover {
+    border-color: var(--clr-rose-800);
+    background-color: var(--clr-rose-800);
+}
+
+p.Instruction__List-Item,
+p.Ingredient__List-Item {
+    flex: 9;
+    text-align: left;
+}
+
+button.Button__Removal {
+    flex: 0.15;
+    aspect-ratio: 1/1;
+    font-size: var(--font-s);
+
+    margin-left: 0.5em;
+    border-radius: 12.5%;
+    align-self: start;
+}
+
+/* The Nutrition Section */
+div.NutritionSection {
+    background-color: var(--clr-stone-150);
+    border-radius: 1rem;
+    padding: 1em;
+
+    margin: 1em 0em;
+}
+
+div.mini__wrapper {
+    display: flex;
+    align-items: center;
+
+    min-height: 6vh;
+
+    margin-bottom: 0.1em;
+    padding: 0.25em 0.5em;
+}
+
+div.mini__wrapper > label {
+    flex: 1;
+    
+    margin-right: 1em;
+    margin-top: 0em;
+}
+
+div.mini__wrapper > input {
+    flex: 2;
+    max-width: 100%;
+    min-width: 0%;
+    min-height: 100%;
+    
+    margin: 0;
+    padding: 0.5em;
+}
+
+input[type="submit"] {
+    min-height: 6vh;
+}
+
+.--Modal-Box {
+    background: var(--clr-quote-bg);
+    margin: auto;
+    padding: 2%;
+
+    border: 2px solid #000;
+    border-Radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.--Modal-Box .--page {
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+.--Modal-Closed {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    padding: 2em;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    overflow-y: auto;
+}
+
+
+/* ===============Media Query=============== */
+
+@media only screen and (max-width: 50em) {
+    div.Grid-Wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .Modal__Open {
+        max-width: 60vw;
+    }
+
+    div.--Modal-Box .--page,
+    div.--Modal-Box .Modal__Open {
+        border: 2px solid black;
+        margin-bottom: 0.5em;
+    }
+
+    div.--page{
+        background-color: var(--clr-container-bg);
+        border: none;
+        border-radius: 0;
+    
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    div.--page > * {
+        margin-inline: 2em;
+    }
+
+    div.--page h1{
+        margin-inline: 1em;
+    }
+
+    div.--page img{
+        border-radius: 0;
+        margin-inline: 0;
+        padding: 0;
+    }
+
+    hr {
+        width: 90%;
+    }
+
+    div.Modal__Open {
+        background-color: var(--clr-container-bg);
+        border: none;
+        border-radius: 0;
+        color: black;
+
+        max-width: 100%;
+        padding: 2em;
+
+        margin: 0;
+        margin-inline: auto;
+    }
+
+    div.Ingredient__Add button, 
+    div.Instruction__Add button {
+        font-size: var(--font-xs);
+        font-weight: bold;
+    }
+}
+
