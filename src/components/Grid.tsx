@@ -2,7 +2,7 @@ import { RecipeForm } from "../data";
 
 type RenderListProp = {
     page: RecipeForm[];
-    handleRemoval?: (id: number) => void;
+    handleRemoval?: (id: number, imageID: number) => void;
     handleOpen?: (id: number) => void;
     isImageLoaded: boolean[];
     setImageLoaded: (index: number) => void;
@@ -17,7 +17,7 @@ const RenderGrid: React.FC<RenderListProp> = ({ page, handleRemoval, handleOpen,
                 return (
                     <div className="Card" key={recipe.id}>
                         {handleRemoval && (
-                            <button className="Item-Removal" onClick={() => handleRemoval(recipe.id)}>X</button>
+                            <button className="Item-Removal" onClick={() => handleRemoval(recipe.id, index)}>X</button>
                         )}
                         <div onClick={() => handleOpen && handleOpen(recipe.id)}>
                             {recipe.thumbnail && (

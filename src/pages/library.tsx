@@ -31,10 +31,10 @@ const Library = () => {
         setOpen(true);
     };
 
-    const handleRemoval = (index: number) => {
+    const handleRemoval = (index: number, imageID: number) => {
         setImageLoadedState((prev) => {
             const updated = [...prev];
-            updated[index - 1] = false;
+            updated[imageID] = false;
             return updated;
         });
 

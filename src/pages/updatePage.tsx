@@ -273,10 +273,10 @@ const UpdateRecipe: React.FC<{recipeID : number}> = ({recipeID}) => {
                         </div>
 
                         <div className="mini__wrapper">
-                            <label>Minerail: </label>
+                            <label>Fat: </label>
                             <input
                                 type="number"
-                                name="Minerail"
+                                name="Fat"
                                 placeholder={`0`}
                                 value={recipe.nutrition.Fat}
                                 onChange={handleNutritionUpdate}
