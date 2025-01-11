@@ -12,8 +12,8 @@ const RenderGrid: React.FC<RenderListProp> = ({ page, handleRemoval, handleOpen,
     return (
         <>
             {page.map((recipe, index) => {
-                const duration = recipe.cookTime + recipe.prepTime;
-
+                const duration: number = Number(recipe.cookTime) + Number(recipe.prepTime);
+                
                 return (
                     <div className="Card" key={recipe.id}>
                         {handleRemoval && (

@@ -32,12 +32,7 @@ const Library = () => {
     };
 
     const handleRemoval = (index: number, imageID: number) => {
-        setImageLoadedState((prev) => {
-            const updated = [...prev];
-            updated[imageID] = false;
-            return updated;
-        });
-
+        setImageLoadedState(isImageLoaded.filter((_, i) => i !== imageID));
         dispatch(removeRecipe(index));
     };
 

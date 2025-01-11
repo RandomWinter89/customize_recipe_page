@@ -50,12 +50,12 @@ const FrontendMentor: React.FC<{recipeID ?: number}> = ({recipeID}) => {
             </div>
             <div className="--listing">
                 <h2>Ingredients</h2>
-                <ul>{renderIngredient()}</ul>
+                {firstRecipe.current.ingredients && <ul>{renderIngredient()}</ul>}
             </div>
             <hr />
             <div className="--listing">
                 <h2>Instructions</h2>
-                <ol>{renderInstruction()}</ol>
+                {firstRecipe.current.ingredients && <ol>{renderInstruction()}</ol>}
             </div>
             <hr/>
             <div className="--nutrition-form">
